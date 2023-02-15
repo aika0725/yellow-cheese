@@ -9,15 +9,17 @@ namespace yellow_cheese
 {
     internal class Program
     {
-        static void addOneToRefParam(ref int i)
+        // out keyword means the parameter has to be modified in the method. However, we can not use it. like using i+=1
+        static void addOneToRefParam(out int i)
         {
-            i += 1;
+            i =1;
             Console.WriteLine("i is : " + i);
         }
         public static void Main()
         {
             int test = 20;
-            addOneToRefParam(ref test);
+            addOneToRefParam(out test);
+            
             Console.WriteLine("test is : " + test);
             Console.ReadLine() ;
         }
