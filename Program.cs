@@ -3,27 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace yellow_cheese
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void addOneToRefParam(ref int i)
         {
-            string i = "33";
-            double f = 1234.56789;
-            Console.WriteLine("i: {0,10:0.0} f: {1,15:0.00}", i, f);
-            Console.WriteLine("i: {0,10:0.0} f: {1,15:0.00}", 0, 0);
-
-
-            Console.WriteLine("i: {0,10:0} f: {1,10:0.00}", i, f);
-            Console.WriteLine("i: {0,10:0} f: {1,10:0.00}", 0, 0);
-
-            Console.WriteLine("i: {0,-6:0} f: {1,-10:0.00}", i, f);
-            Console.WriteLine("i: {0,10:0} f: {1,-10:0.00}", 0, 0);
-            Console.ReadKey();
+            i += 1;
+            Console.WriteLine("i is : " + i);
+        }
+        public static void Main()
+        {
+            int test = 20;
+            addOneToRefParam(ref test);
+            Console.WriteLine("test is : " + test);
+            Console.ReadLine() ;
+        }
 
 
     }
-}
 }
